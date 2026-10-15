@@ -1,4 +1,5 @@
 import './App.css'
+import Login from './pages/login'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <circle cx="16.5" cy="7.5" r="1.25" fill="white" />
       </svg>
       <h2>Coming soon...</h2>
+      <Login />
     </div>
   )
 }
