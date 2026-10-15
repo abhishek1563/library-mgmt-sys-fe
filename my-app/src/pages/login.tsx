@@ -23,9 +23,7 @@ const Login = () => {
             <FormControlLabel sx={{
                 marginTop: '0.5rem', paddingLeft: '5px'
             }}
-                control={<input type="checkbox" />}
-                checked={rememberMe}
-                onChange={(e) => setRememberMe(e.target.checked)}
+                control={<input type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} />}
                 label="Remember me"
             />
         </FormControl>
