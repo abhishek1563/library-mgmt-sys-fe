@@ -1,0 +1,168 @@
+/** @format */
+
+.site-header {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	align-items: center;
+	min-height: 76px;
+	padding: 0 clamp(16px, 4vw, 56px);
+	border-bottom: 1px solid #dce7e2;
+	background: #fff;
+	color: #163e36;
+	text-align: left;
+}
+
+.header-college {
+	display: flex;
+	align-items: center;
+	gap: 11px;
+	min-width: 0;
+}
+
+.college-logo {
+	display: grid;
+	width: 40px;
+	height: 40px;
+	flex: 0 0 40px;
+	place-items: center;
+	border-radius: 8px;
+	background: #e5f2ec;
+	color: #17664f;
+}
+
+.college-logo svg {
+	font-size: 25px;
+}
+
+.college-name {
+	overflow: hidden;
+	color: #29443c;
+	font-size: 14px;
+	font-weight: 650;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.header-title {
+	color: #145d49;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 25px;
+	font-weight: 700;
+}
+
+.header-account {
+	display: flex;
+	justify-self: end;
+}
+
+.account-trigger.MuiIconButton-root {
+	gap: 4px;
+	padding: 4px;
+}
+
+.account-avatar.MuiAvatar-root {
+	width: 38px;
+	height: 38px;
+	background: #c85b42;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.account-chevron.MuiSvgIcon-root {
+	color: #52685f;
+}
+
+.app-content {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 32px 16px;
+	background: #f5f8f6;
+	text-align: center;
+}
+
+.site-footer {
+	display: flex;
+	min-height: 68px;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 12px clamp(16px, 4vw, 56px);
+	border-top: 1px solid #dce7e2;
+	background: #fff;
+	color: #52685f;
+}
+
+.footer-brand {
+	display: flex;
+	align-items: center;
+	gap: 9px;
+}
+
+.footer-logo {
+	display: grid;
+	width: 30px;
+	height: 30px;
+	place-items: center;
+	border-radius: 7px;
+	background: #e5f2ec;
+	color: #17664f;
+}
+
+.footer-logo svg {
+	font-size: 19px;
+}
+
+.footer-product {
+	color: #29443c;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.footer-copyright {
+	margin: 0;
+	font-size: 12px;
+	text-align: right;
+}
+
+@media (max-width: 560px) {
+	.site-header {
+		min-height: 66px;
+		padding-inline: 12px;
+	}
+
+	.college-name {
+		max-width: 96px;
+		font-size: 12px;
+	}
+
+	.college-logo {
+		width: 34px;
+		height: 34px;
+		flex-basis: 34px;
+	}
+
+	.header-title {
+		font-size: 21px;
+	}
+
+	.account-avatar.MuiAvatar-root {
+		width: 34px;
+		height: 34px;
+	}
+
+	.site-footer {
+		min-height: 60px;
+		padding-inline: 12px;
+	}
+
+	.footer-copyright {
+		max-width: 60%;
+		font-size: 11px;
+	}
+}

@@ -1,11 +1,27 @@
-import { Button, FormControl, FormControlLabel, Link, TextField, Typography } from "@mui/material";
+import { Button, FormControl, FormControlLabel, TextField, Typography } from "@mui/material";
+import { Link as RouterLink } from '@tanstack/react-router'
+import { useNavigate } from '@tanstack/react-router'
 import CustomCard from "../components/card";
+import { isAuthenticated, signIn } from '../utils/auth'
 import React from "react";
 
 const Login = () => {
     const [studentId, setStudentId] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [rememberMe, setRememberMe] = React.useState(false);
+    const navigate = useNavigate()
+    const authenticated = isAuthenticated()
+
+    React.useEffect(() => {
+        if (authenticated) {
+            void navigate({ to: '/dashboard', replace: true })
+        }
+    }, [authenticated, navigate])
+
+    const handleSignIn = () => {
+        signIn(rememberMe)
+        void navigate({ to: '/dashboard' })
+    }
     const staticText = <Typography variant="h5" component="h2" gutterBottom>
         Welcome to the Library Management System
     </Typography>
@@ -28,16 +44,18 @@ const Login = () => {
             />
         </FormControl>
     </>
-    const actionButtons = <><Button variant="contained" size="large" sx={{ width: '100%' }} disabled={isButtonDisabled} onClick={() => { console.warn("Sign In button clicked", studentId, password) }}>
+    const actionButtons = <><Button variant="contained" size="large" sx={{ width: '100%' }} disabled={isButtonDisabled} onClick={handleSignIn}>
         Sign In
     </Button>
         <Typography sx={{ mt: 2 }}>
             Don't have an account?
-            <Link href="#" >
+            <RouterLink to="/register" style={{ color: '#17664f', fontWeight: 600 }}>
                 Sign Up Here.
-            </Link>
+            </RouterLink>
         </Typography>
     </>
+    if (authenticated) return null
+
     return <CustomCard cardId="login-card"
         cardClassName="no-animation"
         cardActionAreaEnabled={false}
